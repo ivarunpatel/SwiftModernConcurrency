@@ -4,5 +4,6 @@
         <page name='Intro Async Await'/>
         <page name='Closure to Async Await'/>
         <page name='Delegate to Async Await'/>
+        <page name='Structured Concurrency'/>
     </pages>
 </playground>
