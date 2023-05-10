@@ -6,5 +6,6 @@
         <page name='Delegate to Async Await'/>
         <page name='Structured Concurrency'/>
         <page name='Task Groups'/>
+        <page name='Unstructured Concurrency'/>
     </pages>
 </playground>
