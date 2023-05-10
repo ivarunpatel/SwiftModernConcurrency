@@ -7,5 +7,6 @@
         <page name='Structured Concurrency'/>
         <page name='Task Groups'/>
         <page name='Unstructured Concurrency'/>
+        <page name='Detached Tasks'/>
     </pages>
 </playground>
