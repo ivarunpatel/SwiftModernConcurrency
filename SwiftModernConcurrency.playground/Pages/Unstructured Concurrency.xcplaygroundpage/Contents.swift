@@ -57,7 +57,7 @@ func downloadImageAndMetadata(imageNumber: Int) async throws -> DetailedImage {
 var downloadTask: Task<DetailedImage, Error>? {
     didSet {
         if downloadTask == nil {
-            print("Cancelled")
+            print("Completed")
         } else {
             print("Downloading")
         }
@@ -83,13 +83,11 @@ func downloadImage() async {
 }
 
 func cancelImageDownload() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-        downloadTask?.cancel()
-    }
-    
+    downloadTask?.cancel()    
 }
 
 Task {
     await downloadImage()
 }
+
 //: [Next](@next)
