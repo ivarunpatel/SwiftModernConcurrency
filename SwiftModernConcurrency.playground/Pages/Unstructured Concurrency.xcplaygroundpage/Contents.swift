@@ -92,5 +92,4 @@ func cancelImageDownload() {
 Task {
     await downloadImage()
 }
-cancelImageDownload()
 //: [Next](@next)
