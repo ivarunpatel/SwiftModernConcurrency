@@ -8,5 +8,6 @@
         <page name='Task Groups'/>
         <page name='Unstructured Concurrency'/>
         <page name='Detached Tasks'/>
+        <page name='Actor'/>
     </pages>
 </playground>
