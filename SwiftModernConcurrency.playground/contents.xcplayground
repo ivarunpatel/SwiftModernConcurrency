@@ -9,5 +9,6 @@
         <page name='Unstructured Concurrency'/>
         <page name='Detached Tasks'/>
         <page name='Actor'/>
+        <page name='Global Actor'/>
     </pages>
 </playground>

@@ -43,7 +43,7 @@ func downloadImageAndMetadata(imageNumber: Int) async throws -> DetailedImage {
 
 /// Async function can only called in async context and explicitly created Task
 /// By default task context inherit from parent context
-/// e.g. if we create Task in viewDidLoad method of UIViewController Task context will be Main thread as viewDidLoad function runs on Main Thread.
+/// e.g. if we create Task in `viewDidLoad` method of `UIViewController` Task context will be Main thread as `viewDidLoad` function runs on Main Thread.
 
 Task {
     do {

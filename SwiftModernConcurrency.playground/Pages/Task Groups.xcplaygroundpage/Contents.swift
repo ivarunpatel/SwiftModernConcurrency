@@ -53,10 +53,10 @@ func downloadImageAndMetadata(imageNumber: Int) async throws -> DetailedImage {
 
 /// A Task Group is a form of structured concurrency designed to provide a dynamic amount of concurrency. With it, we can launch multiple tasks, launch them in a group, and have them execute all at the same time.
 /// When we add task to group it execute immediately in any order, so we need to design our code in such way there is no depedencies in child tasks.
-/// To introduce data safety, Swift implements the concept of a @Sendable closure. Whenever we create a Task, the body is a @Sendable closure, and this closure has the following properties:
+/// To introduce data safety, Swift implements the concept of a `@Sendable` closure. Whenever we create a Task, the body is a `@Sendable` closure, and this closure has the following properties:
 /// - Cannot capture mutable variables.
 /// - We can capture value types, actors, classes or other objects that implement their own synchronization.
-/// We can also use addTaskUnlessCancelled() which will avoid adding task if group is cancelled
+/// We can also use `addTaskUnlessCancelled()` which will avoid adding task if group is cancelled
 func downloadMultipleImagesWithMetadata(imageNumbers: Int...) async throws -> [DetailedImage] {
     var detailedImages: [DetailedImage] = []
     try await withThrowingTaskGroup(of: DetailedImage.self, body: { group in

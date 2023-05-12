@@ -47,9 +47,10 @@ func downloadMetadata(imageNumber: Int) async throws -> ImageMetadata {
 
 /// Async let will allows us to execute code concurrently. We can use structure concurrency where there is no depedencies between tasks.
 /// Image and Metadata download task will begin execution on paralled and suspend the function on return statement
-/// Suppose downloadMetadata fails and downloadImage is downloading a big image
-/// since downloadMetadata failed, downloadImage will be marked as cancelled
-/// Marking a task as cancelled does not actually mean that the task is cancelled. Instead, it simply notifies the task that its results are no longer needed. All the child tasks and their descendants will be cancelled when their parent is cancelled.
+/// Suppose `downloadMetadata` fails and `downloadImage` is downloading a big image
+/// since `downloadMetadata` failed, `downloadImage` will be marked as `cancelled`
+/// Marking a task as `cancelled` does not actually mean that the task is cancelled. Instead, it simply notifies the task that its results are no longer needed. All the child tasks and their descendants will be cancelled when their parent is cancelled.
+
 func downloadImageAndMetadata(imageNumber: Int) async throws -> DetailedImage {
     async let image = downloadImage(imageNumber: imageNumber)
     async let metadata = downloadMetadata(imageNumber: imageNumber)

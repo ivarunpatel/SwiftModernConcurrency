@@ -52,7 +52,7 @@ func downloadImageAndMetadata(imageNumber: Int) async throws -> DetailedImage {
 }
 
 /// Unstructured concurrency is useful when we want to launch task from non-async contexts. They can outlive their scopes.
-/// In unstructured concurrency we can start and store task into variable. Which allow us to get result somewhere else and also cancel from somewhwre else. e.g Loading UIImage in TableViewCell and cancelling when UITableViewCell is no longer visible
+/// In unstructured concurrency we can start and store task into variable. Which allow us to get result somewhere else and also cancel from somewhwre else. e.g Loading `UIImage` in `UITableViewCell` and cancelling when `UITableViewCell` is no longer visible
 
 var downloadTask: Task<DetailedImage, Error>? {
     didSet {

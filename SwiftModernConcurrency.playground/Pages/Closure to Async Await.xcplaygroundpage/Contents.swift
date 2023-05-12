@@ -21,7 +21,7 @@ enum ImageDownloadError: Error {
 
 /// Continuation is simply what happend after an async call. Everything under await is continuation
 
-// Explicit Continuation
+// MARK: - Explicit Continuation (Closure version)
 
 func downloadImageAndMetadata(
     imageNumber: Int,
@@ -47,7 +47,8 @@ func downloadImageAndMetadata(
     imageTask.resume()
 }
 
-// Checked throwing continuation version
+// MARK: - Checked throwing continuation version
+
 /// There must be continuation call whithin every branch of withCheckedThrowingContinuation
 func downloadImageAndMetadata(imageNumber: Int) async throws -> DetailedImage {
     return try await withCheckedThrowingContinuation({ (continuation: CheckedContinuation<DetailedImage, Error>) in
